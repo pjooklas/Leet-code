@@ -25,14 +25,35 @@
 
 // *********************************************
 
-function canConstruct(ransomNote: string, magazine: string): boolean {
-    if (ransomNote.length > magazine.length) return false
+// function canConstruct(ransomNote: string, magazine: string): boolean {
+    //     if (ransomNote.length > magazine.length) return false
 	
-    for (let i = 0; i < ransomNote.length; i++) {
-        const letter = ransomNote.substring(i, i + 1)
-        if (magazine.indexOf(letter) == -1) return false
-        magazine = magazine.replace(letter, '')
+    //     for (let i = 0; i < ransomNote.length; i++) {
+        //         const letter = ransomNote.substring(i, i + 1)
+        //         if (magazine.indexOf(letter) == -1) return false
+        //         magazine = magazine.replace(letter, '')
+        //     }
+        
+        //     return true
+        // };
+        
+        
+// *********************************************
+// Max Consecutive Ones
+
+function findMaxConsecutiveOnes(nums: number[]): number {
+    let length: number = 0;
+    let count: number = 0;
+
+    for(let i= 0; i < nums.length; i++) {
+        if (nums[i] === 0) count = 0;
+        else {
+            count++;
+            length = Math.max(length, count);
+        }
     }
-    
-    return true
+    return length;
 };
+console.log(findMaxConsecutiveOnes([1,1,0,1,1,1, 0, 1, 1, 1, 1]));
+
+// *********************************************
